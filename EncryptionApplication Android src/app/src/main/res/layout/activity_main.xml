@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alik.encryptionapplication.MainActivity">
+
+    <Button
+        android:id="@+id/aesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/blowfishButton"
+        android:layout_alignBottom="@+id/blowfishButton"
+        android:layout_toStartOf="@+id/blowfishButton"
+        android:onClick="aesButton"
+        android:text="AES" />
+
+    <EditText
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/info1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Plain Text" />
+
+    <EditText
+        android:id="@+id/passwordTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/info2"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/rsaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/aesButton"
+        android:layout_alignBottom="@+id/aesButton"
+        android:layout_toStartOf="@+id/aesButton"
+        android:onClick="rsaButton"
+        android:text="RSA" />
+
+    <Button
+        android:id="@+id/blowfishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/arc4Button"
+        android:layout_alignBottom="@+id/arc4Button"
+        android:layout_toStartOf="@+id/arc4Button"
+        android:onClick="blowfishButton"
+        android:text="BlowFish" />
+
+    <EditText
+        android:id="@+id/encryptedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView4"
+        android:layout_toStartOf="@+id/saveText"
+        android:text="Encrypted Text" />
+
+    <Switch
+        android:id="@+id/decryption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/blowfishButton"
+        android:text="Decryption" />
+
+    <Button
+        android:id="@+id/arc4Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/fileLoad"
+        android:onClick="arc4Button"
+        android:text="ARC4" />
+
+    <Button
+        android:id="@+id/fileLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:onClick="loadFileButton"
+        android:text="Open FIle" />
+
+    <TextView
+        android:id="@+id/fileTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/arc4Button"
+        android:text="File Empty"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <TextView
+        android:id="@+id/info1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Text to encrypt"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/info2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/messageText"
+        android:text="Password"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/passwordTxt"
+        android:text="encrypted text and button to save this text"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/info3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/encryptedText"
+        android:text="load file to encrypt"
+        android:textSize="18sp" />
+
+    <Switch
+        android:id="@+id/fileSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/blowfishButton"
+        android:layout_toStartOf="@+id/decryption"
+        android:text="Use File" />
+
+    <Button
+        android:id="@+id/saveText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/info3"
+        android:layout_alignParentEnd="true"
+        android:text="save to file"
+        android:onClick="saveTextFile"/>
+
+    <Button
+        android:id="@+id/saveRSAKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/portText"
+        android:layout_toEndOf="@+id/sendFileButton"
+        android:text="Export RSA Key"
+        android:onClick="exportRSA"/>
+
+    <EditText
+        android:id="@+id/ipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fileSwitch"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="IP Address" />
+
+    <EditText
+        android:id="@+id/portText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/ipText"
+        android:layout_toEndOf="@+id/ipText"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:text="Port" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fileSwitch"
+        android:text="Set IP Address and Port" />
+
+    <Button
+        android:id="@+id/ipAndPortButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sendFileButton"
+        android:layout_alignBottom="@+id/sendFileButton"
+        android:layout_alignParentStart="true"
+        android:text="Set IP and Port"
+        android:onClick="ipAndPortButton"/>
+
+    <Button
+        android:id="@+id/sendFileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/saveRSAKey"
+        android:layout_alignBottom="@+id/saveRSAKey"
+        android:layout_toEndOf="@+id/ipAndPortButton"
+        android:text="Send File"
+        android:onClick="sendFileButton"/>
+
+</RelativeLayout>

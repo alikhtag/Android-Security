@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alik.permissiontest.MainActivity">
+
+    <Button
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sms"
+        android:layout_alignBottom="@+id/sms"
+        android:layout_toEndOf="@+id/calendar"
+        android:onClick="locButton"
+        android:text="Location"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/contacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/location"
+        android:layout_alignBottom="@+id/location"
+        android:layout_alignParentEnd="true"
+        android:onClick="contactButton"
+        android:text="Contacts" />
+
+    <Button
+        android:id="@+id/sms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_toStartOf="@+id/contacts"
+        android:layout_toEndOf="@+id/location"
+        android:onClick="readSMS"
+        android:text="Read SMS" />
+
+    <Button
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/location"
+        android:layout_alignBottom="@+id/location"
+        android:layout_alignParentStart="true"
+        android:onClick="readCalendar"
+        android:text="calendar" />
+
+    <Button
+        android:id="@+id/service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar"
+        android:layout_marginTop="36dp"
+        android:layout_toStartOf="@+id/location"
+        android:onClick="serviceStart"
+        android:text="Service" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/contacts"
+        android:layout_below="@+id/location"
+        android:text="Launch Background Service that uses camera and microphone permissions" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Launch Permissions that read SMS, Calendar, Location and Contacts" />
+
+    <EditText
+        android:id="@+id/ipTextInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/service"
+        android:layout_below="@+id/service"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter IP Address" />
+
+    <Button
+        android:id="@+id/ipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ipTextInput"
+        android:layout_below="@+id/ipTextInput"
+        android:onClick="getIP"
+        android:text="Submit IP" />
+
+    <Button
+        android:id="@+id/service_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/service"
+        android:layout_alignBottom="@+id/service"
+        android:layout_toEndOf="@+id/service"
+        android:onClick="stopService"
+        android:text="Stop Service" />
+
+    <EditText
+        android:id="@+id/portNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/contacts"
+        android:layout_alignTop="@+id/ipTextInput"
+        android:layout_toEndOf="@+id/ipTextInput"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Port" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/portNumText"
+        android:layout_alignEnd="@+id/contacts"
+        android:layout_alignStart="@+id/ipTextInput"
+        android:text="Enter  IP address and Port" />
+
+</RelativeLayout>
